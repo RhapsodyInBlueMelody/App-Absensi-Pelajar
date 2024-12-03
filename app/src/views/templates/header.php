@@ -25,7 +25,7 @@
                     <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Auth">EduSphere</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?= BASEURL;?>/About">Administration</a>
+                    <a class="nav-link" href="<?= BASEURL;?>/Auth">Administration</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="<?= BASEURL;?>/About">Academic</a>
