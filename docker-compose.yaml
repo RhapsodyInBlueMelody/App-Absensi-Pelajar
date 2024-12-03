@@ -15,16 +15,3 @@ services:
     volumes:
       - ./app:/app
       - ./app/services/php/php.ini:/usr/local/etc/php/php.ini
-
-  db:
-    image: mariadb:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "my_database"
-    volumes:
-      - mysqldata:/var/lib/mysql
-    ports:
-      - 3306:3306
-
-volumes:
-  mysqldata: {}

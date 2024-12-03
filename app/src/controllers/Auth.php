@@ -1,12 +1,12 @@
 <?php
 //Controller untuk Page Home
-class Home extends Controller
+class Auth extends Controller
 {
     public function index()
     {
-        $data["judul"] = "Home";
+        $data["judul"] = "Login";
         $this->view("templates/header", $data);
-        $this->view("home/index");
+        $this->view("auth/login/index");
         $this->view("templates/footer");
     }
 }
