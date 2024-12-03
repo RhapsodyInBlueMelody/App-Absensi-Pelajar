@@ -12,4 +12,5 @@ class Controller
         require_once "../src/models/" . $model . ".php";
         return new $model();
     }
+    
 }

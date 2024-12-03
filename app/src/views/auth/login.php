@@ -4,8 +4,8 @@
             <div class="col-lg-8 d-none d-lg-block position-relative">
                 <img src="/asset/background_sekolah.png" alt="Login Background">
                 <div class="position-center text-white">
-                    <h1 class="display-3 fw-bold">EduSphere</h1>
-                    <h2 class="fs-4">Pusat Edukasi Sekolah</h2>
+                    <h1 class="display-3 fw-bold">CERDAS</h1>
+                    <h2 class="fs-4">Centralized Education Resource and Digital Academic System</h2>
                 </div>
             </div>
 
@@ -16,8 +16,10 @@
                 </div>
                 <h2 class="text-center fw-bold">Welcome</h2>
                 <p class="text-center">Please sign in with your ID</p>
-
-                <form action="login_process.php" method="POST">
+                <?php if (isset($data["error"])): ?>
+        <p style="color:red;"><?php echo $data["error"]; ?></p>
+    <?php endif; ?>
+                <form action="<?= BASEURL; ?>/Auth/authenticate" method="POST">
                     <!-- Username Input -->
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
