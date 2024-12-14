@@ -46,7 +46,7 @@
                 
                 <!-- Google Login -->
                 <div class="text-center">
-                    <a href="#" class="btn btn-danger w-100">Login with Google</a>
+                    <a href="<?= BASEURL; ?>/Registration" class="btn btn-danger w-100">Sign Up</a>
                 </div>
             </div>
         </div>

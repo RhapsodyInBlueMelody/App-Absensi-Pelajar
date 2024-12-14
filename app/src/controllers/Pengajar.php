@@ -4,7 +4,7 @@ class Pengajar extends Controller
 {
     public function index()
     {
-        $this->requireRole('Guru');
+        $this->requireRole('guru');
 
         $data["judul"] = "Admin Dashboard";
         $this->view("templates/header", $data);

@@ -22,9 +22,9 @@ class Database
 
         try {
             $this->conn = new PDO(
-                "mysql:host=" .
-                    $this->dbh["host"] .
-                    ";dbname=" .
+                "pgsql:host=" .
+                    $this->dbh["host"] . 
+                    ";port=5432;dbname=" .
                     $this->dbh["dbname"],
                 $this->dbh["user"],
                 $this->dbh["pass"],

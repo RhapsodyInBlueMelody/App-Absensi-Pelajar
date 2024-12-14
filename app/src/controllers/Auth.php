@@ -1,6 +1,6 @@
 <?php
 
-class Auth extends Controller
+class Auth extends Controller 
 {
     public function index()
     {
@@ -20,20 +20,21 @@ class Auth extends Controller
 
             $userModel = $this->model('user_model');
             $user = $userModel->getUserByUsername($username);
-
+        }
 
         if ($user && password_verify($password, $user['password'])) {
             session_start();
             $_SESSION['user_id'] = $user['id'];
-            $_SESSION['role'] = $user['role']; 
+            $_SESSION['role'] = $user['role'];
+            
 
      
             if ($user['role'] === 'admin') {
                 header("Location: /Admin/dashboard");
-            } if else ($user['role'] === 'pengajar') {
+            } else if ($user['role'] === 'guru') {
                 header("Location: /Pengajar/dashboard");
             } else {
-                header("Location: /Murid/dashboard")
+                header("Location: /Murid/dashboard");
             }
             exit;
         } else {
@@ -44,6 +45,8 @@ class Auth extends Controller
             $this->view("templates/footer");
         }
     }
+
+
 
     public function logout()
     {

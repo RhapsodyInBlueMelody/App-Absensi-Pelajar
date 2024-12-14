@@ -3,8 +3,8 @@
 class Admin extends Controller
 {
     public function index()
-    {
-        $this->requireRole('Admin');
+    {   
+        $this->requireRole('admin');
 
         $data["judul"] = "Admin Dashboard";
         $this->view("templates/header", $data);

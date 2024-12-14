@@ -4,7 +4,7 @@ class Murid extends Controller
 {
     public function index()
     {
-        $this->requireRole('Murid');
+        $this->requireRole('murid');
 
         $data["judul"] = "User Dashboard";
         $this->view("templates/header", $data);

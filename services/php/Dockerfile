@@ -1,12 +1,14 @@
 FROM php:8.0-fpm
 
-RUN docker-php-ext-install pdo pdo_mysql mysqli && docker-php-ext-enable mysqli
-
 RUN apt-get update && apt-get install -y \
     curl \
     git \
     unzip \
+    libpq-dev\
     && rm -rf /var/lib/apt/lists/*
+
+RUN docker-php-ext-install pdo pdo_pgsql
+
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -18,7 +20,7 @@ RUN composer --version
 WORKDIR /app
 
 # Install any PHP extensions (example)
-RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install pdo_pgsql
 
 COPY . /app
 
