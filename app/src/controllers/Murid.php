@@ -4,11 +4,7 @@ class Murid extends Controller
 {
     public function index()
     {
-        // session_start();
-        // if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'user') {
-        //     header("Location: Auth/login");
-        //     exit;
-        // }
+        $this->requireRole('Murid');
 
         $data["judul"] = "User Dashboard";
         $this->view("templates/header", $data);

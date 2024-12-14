@@ -1,6 +1,6 @@
 <?php
 
-class User
+class user_model
 {
     private $db;
 
@@ -13,6 +13,6 @@ class User
     {
         $this->db->query("SELECT * FROM users WHERE username = :username");
         $this->db->bind(":username", $username);
-        return $this->db->single(); // Fetch single result
+        return $this->db->single();
     }
 }

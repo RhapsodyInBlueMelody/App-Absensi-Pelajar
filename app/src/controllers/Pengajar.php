@@ -1,14 +1,10 @@
 <?php
 
-class Guru extends Controller
+class Pengajar extends Controller
 {
     public function index()
     {
-        // session_start();
-        // if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-        //     header("Location: /Auth/login");
-        //     exit;
-        // }
+        $this->requireRole('Guru');
 
         $data["judul"] = "Admin Dashboard";
         $this->view("templates/header", $data);
